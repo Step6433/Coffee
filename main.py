@@ -6,8 +6,8 @@ import sys
 class Coffee(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('main(1).ui', self)
-        self.con = sqlite3.connect('coffee.sql')
+        uic.loadUi('main.ui', self)
+        self.con = sqlite3.connect('coffee.db')
         self.cur = self.con.cursor()
         self.cur.execute('''SELECT * FROM coffee''')
         res = self.cur.fetchall()
